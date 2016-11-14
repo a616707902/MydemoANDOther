@@ -1,4 +1,4 @@
-package com.chenpan.mvpframe.base;
+package com.chenpan.mvpframe.mvp.view;
 
 /**
  * MVP基础view

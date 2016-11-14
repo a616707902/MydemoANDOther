@@ -1,4 +1,4 @@
-package com.chenpan.mvpframe.base;
+package com.chenpan.mvpframe.common;
 
 import android.app.Activity;
 import android.app.ActivityManager;

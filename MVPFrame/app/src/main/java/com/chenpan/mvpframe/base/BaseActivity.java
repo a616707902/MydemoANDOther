@@ -7,8 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 
 import com.chenpan.mvpframe.R;
+import com.chenpan.mvpframe.common.AppManager;
 import com.chenpan.mvpframe.event.RxManager;
 import com.chenpan.mvpframe.mvp.IPresenter;
+import com.chenpan.mvpframe.utils.StatusBarUtil;
 
 import butterknife.ButterKnife;
 
@@ -52,34 +54,23 @@ public abstract class BaseActivity<T extends IPresenter> extends AppCompatActivi
      * 着色状态栏（4.4以上系统有效）
      */
     protected void SetStatusBarColor() {
-        StatusBarCompat.setStatusBarColor(this, ContextCompat.getColor(this, R.color.colorAccent));
+        StatusBarUtil.setStatusBarColor(this, ContextCompat.getColor(this, R.color.colorAccent));
     }
 
     /**
      * 着色状态栏（4.4以上系统有效）
      */
     protected void SetStatusBarColor(int color) {
-        StatusBarCompat.setStatusBarColor(this, color);
+        StatusBarUtil.setStatusBarColor(this, color);
     }
 
     /**
      * 沉浸状态栏（4.4以上系统有效）
      */
     protected void SetTranslanteBar() {
-        StatusBarCompat.translucentStatusBar(this);
+        StatusBarUtil.translucentStatusBar(this, false);
     }
 
-    public void showLoaing() {
-        LoadingDialog.showLoading(this);
-    }
-
-    public void showLoaing(String msg) {
-        LoadingDialog.showLoading(this, msg, true);
-    }
-
-    public void dismissLoading() {
-        LoadingDialog.disDialog();
-    }
 
     @Override
     protected void onDestroy() {

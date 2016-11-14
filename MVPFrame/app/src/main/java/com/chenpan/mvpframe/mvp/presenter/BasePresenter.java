@@ -1,4 +1,4 @@
-package com.chenpan.mvpframe.base;
+package com.chenpan.mvpframe.mvp.presenter;
 
 import android.content.Context;
 
@@ -12,7 +12,6 @@ public abstract class BasePresenter<T> implements IPresenter<T> {
     public void attachView(T view, Context context) {
         this.mView = view;
         this.mActivity = context;
-        this.onStart();
     }
 
     @Override
@@ -20,6 +19,5 @@ public abstract class BasePresenter<T> implements IPresenter<T> {
         this.mView = null;
     }
 
-    public void onStart(){}
 
 }
